@@ -15,24 +15,26 @@
 
 All datasets were processed using [qiime2](https://docs.qiime2.org/2021.11/) pipeline with [DADA2](https://benjjneb.github.io/dada2/) for Sequence quality control and feature table construction, and [SILVA](https://www.arb-silva.de/) database for taxonomic assignment, then a phyloseq object was constructed.  
 
-
 ## Download qiime2 artifacts 
 
-[Here](https://drive.google.com/file/d/1ME5o9vIZ1opihPtkVFlc0gk--0lSTkjq/view?usp=share_link) 
+[ASV table - table.qza](https://github.com/laurichi13/16S-CRC-data/blob/main/table.qza) 
+[Taxonomy table - taxonomy.qza](https://github.com/laurichi13/16S-CRC-data/blob/main/taxonomy.qza) 
+[rooted-tree.qza](https://github.com/laurichi13/16S-CRC-data/blob/main/rooted-tree.qza) 
 
 ## Download processed data :open_file_folder: 
 
-- Abundance table at genus level is [here.](https://drive.google.com/file/d/1w5sFdGfuwug4cQuEqgHcjKlfLbNF6iVn/view?usp=share_link)
+- Abundance table at genus level is [here.](https://github.com/laurichi13/16S-CRC-data/blob/main/genus.csv.csv)
 :warning: <font color = 'gray'>Sample counts with NO filtering.</font> 
-- Clean metadata is [here](https://drive.google.com/file/d/1yvMj_t-XHAa3tIM-Qd59kPCAhBlgKRQh/view?usp=sharing). 
+- Clean metadata is [here](https://github.com/laurichi13/16S-CRC-data/blob/main/metadata.csv). 
 :memo: <font color = 'gray'> Countries: CA - Canada. USA - United States of America. FRA - France. </font> 
-- Phyloseq object is [here](https://drive.google.com/file/d/1OZBXD1XB_5N4PbL8At1aksnG0Wns0F65/view?usp=sharing). 
+- Phyloseq object is [here](https://github.com/laurichi13/16S-CRC-data/blob/main/physeq.RDS). 
 
 ## Steps for processing data
 
-Qiime version: 2021.4 :eyes:
+Qiime version: 2021.4 
 
 ### ASV table construction
+
 ```bash=s
 conda activate qiime2-2021.4 
 
@@ -62,10 +64,10 @@ qiime demux summarize \
 
 :warning:  Download SILVA database classifier used with Qiime version 2021.4 
 
-
 ```bash=s
   wget https://data.qiime2.org/2021.4/common/silva-138-99-nb-classifier.qza
 ```
+
 Taxonomic assigmnet
 ```bash=s
 qiime feature-classifier classify-sklearn \
@@ -83,7 +85,7 @@ qiime taxa barplot \
   --m-metadata-file list.tsv \
   --o-visualization taxa-bar-plots.qzv
 ```
-### Phyloseq 
+### Phyloseq object construction
 
 ```R=1
 library(tidyverse)
@@ -140,5 +142,5 @@ saveRDS(physeq.gen, "physeq.RDS")
 ```
 
 ### Metadata 
-Complete metadata found for the three studies is [here](https://docs.google.com/spreadsheets/d/1iJ2JeL-FQrs4Aj9dGJuNusGvHf3-_rWs/edit?usp=sharing&ouid=104693150197955528399&rtpof=true&sd=true). 
+Complete metadata found for the three studies is [here](https://github.com/laurichi13/16S-CRC-data/blob/main/full_metadata.xlsx). 
 :memo: <font color = 'gray'> In "Clean metadata" is only the metadata that is common for the three studies. </font>
