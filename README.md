@@ -142,17 +142,3 @@ saveRDS(physeq.gen, "physeq.RDS")
 ### Metadata 
 Complete metadata found for the three studies is [here](https://docs.google.com/spreadsheets/d/1iJ2JeL-FQrs4Aj9dGJuNusGvHf3-_rWs/edit?usp=sharing&ouid=104693150197955528399&rtpof=true&sd=true). 
 :memo: <font color = 'gray'> In "Clean metadata" is only the metadata that is common for the three studies. </font>
-
----
-#### Other datasets not included 
-:::spoiler
-Pending for response
-
-| Dataset | 16S rRNA region | Control | Adenoma | CRC |  Status   |
-| ------- | --------------- | ------- | ------- | --- | --- |
-|      [Ahn](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3866154/)   |     V3-V4    |  148       |  0   |   62  |   Accesion trough dbGaP datasets... Very difficult no access yet   |
-|         [Flemer](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5529966/) |    V3-V4 |  37       | 0      |     43|    There is a problem with ENA, but luckily it will be solved soon :crossed_fingers: |
-|         [Hale](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5225053/) |   V3-V5   |   473      | 214 |    17 | Can't find sequencing data  SRP070783 :question: |
-|         [Wang](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3260502/)| V3 | 56   | 0   |  46   |  Can't find metadata  |
-:::
-
